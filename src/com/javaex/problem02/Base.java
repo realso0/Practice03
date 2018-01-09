@@ -5,6 +5,11 @@ public class Base {
     public void service(String state) {
         
         //코드작성
+    	switch(state) {
+        case "낮": {day(); break;}
+        case "밤": {night(); break;}
+        case "오후": {afternoon(); break;}
+        }
     }
 
     public void day() {
@@ -12,7 +17,7 @@ public class Base {
     }
 
     public void night() {
-        //
+        System.out.println("night");
     }
     
     public void afternoon(){
