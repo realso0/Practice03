@@ -4,7 +4,7 @@ public class Book {
 	int bookNo;
 	String title;
 	String author;
-    int stateCode=1;
+    int stateCode;
     
 	Book(int bookNo,String title, String author) {
 		this.bookNo=bookNo;
@@ -37,12 +37,19 @@ public class Book {
 	}
     
 	public void rent() {
-		stateCode=0;
-		System.out.println();
+		if (stateCode==0) {
+			stateCode=1;
+			System.out.println(title+" 이(가) 대여 됐습니다.");
+		} 
 	}
 	
 	public void print() {
-		System.out.println(" ");
+		if (stateCode==0) {
+			System.out.println("책 제목:"+title+",  작가:"+author+",  대여 유무:재고있음");
+		} else {
+			System.out.println("책 제목:"+title+",  작가:"+author+",  대여 유무:대여중");
+		}
+		
 	}
     
     

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BookShop {
 
 	public static void main(String[] args) {
-
+		
 		Book[] books = new Book[10];
 
 		books[0] = new Book(1, "트와일라잇", "스테파니메이어");
@@ -28,7 +28,7 @@ public class BookShop {
 		scanner.close();
 
 		// (1) 입력된 번호에 맞는 책을 찾아 대여 되었음(상태코드=0)을 체크 합니다.
-
+		books[num-1].rent();
 		System.out.println("*****도서 정보 출력하기******");
 		displayBookInfo(books);
 	}
@@ -37,7 +37,8 @@ public class BookShop {
 	private static void displayBookInfo(Book[] books) {
 		// 코드작성
 		for (int i = 0; i < books.length; i++) {
-			System.out.println(books[i].toString());
+			System.out.print((i+1)+" ");
+			books[i].print();
 		}
 	}
 }
